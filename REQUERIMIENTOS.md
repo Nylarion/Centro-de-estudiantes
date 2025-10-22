@@ -69,3 +69,12 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - El sistema debe permitir comentar ideas
 - El sistema debe mostrar estados de las ideas (pendiente/aprobada/desaprobada)
 - El sistema debe mostrar sugerencias de ideas para publicaciones
+
+***Requisitos no Funcionales***
+
+-RNF01
+
+- Interfaz intuitiva para usuarios no tècnicos
+- Diseño flexible para distintas resoluciones
+- Navegacion simple y clara
+
