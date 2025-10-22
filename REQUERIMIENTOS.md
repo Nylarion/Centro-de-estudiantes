@@ -78,3 +78,8 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - Diseño flexible para distintas resoluciones
 - Navegacion simple y clara
 
+-RNF02
+
+- Panel administrativo fácil de usar sin conocimientos tècnicos
+- Actualizacion de contenido sin necesidad de programacion
+
