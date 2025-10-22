@@ -29,3 +29,9 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - Desconocimiento de los cargos que tienen los participantes del centro de estudiantes.
 
 ---
+***Datos básicos a almacenar***
+
+-Estudiante
+- ID
+- Nombre completo
+- Correo electronico instuticional
