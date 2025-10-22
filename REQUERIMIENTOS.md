@@ -41,3 +41,15 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - Nombre completo
 - Correo electronico instuticional
 - Ramo dictado
+
+-Publicaciones
+- ID
+- Asunto
+- Informacion otorgada
+- Fecha creacion
+- Comentarios
+- Encuesta Google Forms
+- URL
+- Fecha de subida
+
+---
