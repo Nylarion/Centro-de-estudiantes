@@ -88,5 +88,7 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - Tiempo de respuesta rapido incluso con multiples usuarios
 - Cache para contenido frecuentemente accedido
 - Integracion de un modo oscuro
+
+---
   
 
