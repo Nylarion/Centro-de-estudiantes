@@ -53,3 +53,13 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - Fecha de subida
 
 ---
+
+***Requisitos Funcionales***
+
+-RF01 - Autenticación y Autorización
+
+- El sistema debe permitir registro con validación de email institucional
+- El sistema debe implementar login/logout seguro
+- El sistema debe asignar y verificar roles de usuario
+- El sistema debe permitir comentar solo al logear con email institucional
+
