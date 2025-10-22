@@ -83,3 +83,10 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - Panel administrativo fácil de usar sin conocimientos tècnicos
 - Actualizacion de contenido sin necesidad de programacion
 
+-RNF03
+
+- Tiempo de respuesta rapido incluso con multiples usuarios
+- Cache para contenido frecuentemente accedido
+- Integracion de un modo oscuro
+  
+
