@@ -52,6 +52,24 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - Cualquier persona que visite el sitio
 - Permisos: Solo lectura de información pública
 
+---
+
+***Funciones indispensables por Perfil***
+
+-Administrador:
+- Gestionar usuarios y permisos
+- Crear y moderar propuestas/ideas
+- Asignar responsables de proyectos
+- Actualizar contenido estático (quiénes somos, contactos)
+- Editar visibilidad de la pagina
+
+-Super Usuario:
+- Gestiona publicaciones
+- Publicar información oficial
+- Crear y cerrar encuestas
+- Crear y moderar propuestas/ideas
+
+
 ***Datos básicos a almacenar***
 
 -Estudiante
