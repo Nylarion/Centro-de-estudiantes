@@ -29,6 +29,29 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - Desconocimiento de los cargos que tienen los participantes del centro de estudiantes.
 
 ---
+
+***Tipo de usuarios y perfiles con roles***
+
+-Administrador (Personas Capacitadas):
+- Miembros directivos del centro de estudiantes
+- Permisos: Gestión completa del sistema, moderación de contenido, asignación de roles
+
+-Super Usuario (Directiva de centro):
+- Miembros directivos del centro de estudiantes
+- Permisos: Gestión y moderación de contenido.
+  
+-Estudiante (Registrado):
+- Estudiantes de la facultad registrados
+- Permisos: Ver información, proponer ideas, comentar propuestas
+  
+-Profesor (Docentes):
+- Docentes de la facultad
+- Permisos: Ver información, comentar en propuestas, dar feedback académico
+
+-Invitado (Personas fuera de la Universidad):
+- Cualquier persona que visite el sitio
+- Permisos: Solo lectura de información pública
+
 ***Datos básicos a almacenar***
 
 -Estudiante
