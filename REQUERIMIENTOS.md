@@ -53,3 +53,42 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - Fecha de subida
 
 ---
+
+***Requisitos Funcionales***
+
+-RF01 - Autenticación y Autorización
+
+- El sistema debe permitir registro con validación de email institucional
+- El sistema debe implementar login/logout seguro
+- El sistema debe asignar y verificar roles de usuario
+- El sistema debe permitir comentar solo al logear con email institucional
+
+-RF02 - Gestión de ideas
+
+- El sistema debe permitir crear nuevas ideas/propuestas
+- El sistema debe permitir comentar ideas
+- El sistema debe mostrar estados de las ideas (pendiente/aprobada/desaprobada)
+- El sistema debe mostrar sugerencias de ideas para publicaciones
+
+***Requisitos no Funcionales***
+
+-RNF01
+
+- Interfaz intuitiva para usuarios no tècnicos
+- Diseño flexible para distintas resoluciones
+- Navegacion simple y clara
+
+-RNF02
+
+- Panel administrativo fácil de usar sin conocimientos tècnicos
+- Actualizacion de contenido sin necesidad de programacion
+
+-RNF03
+
+- Tiempo de respuesta rapido incluso con multiples usuarios
+- Cache para contenido frecuentemente accedido
+- Integracion de un modo oscuro
+
+---
+  
+
