@@ -69,6 +69,19 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - Crear y cerrar encuestas
 - Crear y moderar propuestas/ideas
 
+-Estudiante:
+- Registrarse en el sistema
+- Proponer nuevas ideas
+- Ofrecerse como voluntario en proyectos
+- Ver estado de las propuestas
+- Comentar ideas existentes
+
+-Profesor:
+- Ver información pública
+- Comentar en propuestas estudiantiles
+- Recibir notificaciones de actividades relevantes
+
+---
 
 ***Datos básicos a almacenar***
 
