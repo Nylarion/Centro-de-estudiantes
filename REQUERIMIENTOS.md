@@ -123,7 +123,7 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 -RNF01
 
 - Interfaz intuitiva para usuarios
-- Diseño flexible para distintas resoluciones
+- Resoluciones flexibles para distintos dispositivos 
 - Navegacion simple y clara
 
 -RNF02
