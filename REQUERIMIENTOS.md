@@ -85,27 +85,24 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 
 ***Datos básicos a almacenar***
 
--Estudiante
-- ID
-- Nombre completo
-- Correo electronico instuticional
+-Usuario
 
--Profesor
-- ID
-- Nombre completo
-- Correo electronico instuticional
-- Ramo dictado
+ID
+Nombre completo
+Correo electronico institucional
+-Administrador
 
--Publicaciones
-- ID
-- Asunto
-- Informacion otorgada
-- Fecha creacion
-- Comentarios
-- Encuesta Google Forms
-- URL
-- Fecha de subida
+ID
+Nombre completo
+Correo electronico institucional
+-Encuestas
 
+ID
+Titulo
+Descripcion
+Fecha creacion
+Opciones de voto
+Votos de usuarios
 ---
 
 ***Requisitos Funcionales***
