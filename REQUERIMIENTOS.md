@@ -115,7 +115,7 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 
 - El sistema debe permitir crear nuevas ideas/propuestas
 - El sistema debe permitir comentar encuestas
-- El sistema debe mostrar estados de las ideas
+- El sistema debe mostrar estados de las encuestas
 - El sistema debe mostrar sugerencias de ideas para publicaciones
 
 ***Requisitos no Funcionales***
