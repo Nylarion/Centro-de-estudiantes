@@ -1,4 +1,4 @@
-# Web para centro de estudiantes
+# Sistema de encuestas para centro de estudiantes
 ---
 
 ## Requerimientos:
@@ -9,24 +9,22 @@
 
 ***Contexto***
 
-Yo estoy en el centro de estudiantes de Derecho, y uno de los temas que más nos cuesta es organizarnos bien con los estudiantes y también con las ideas o propuestas que van surgiendo.
-Lo que pasa es que hoy por hoy todo lo hacemos por WhatsApp, mails, o formularios sueltos de Google. Entonces la info se pierde, nadie sabe bien qué cosas ya se propusieron, qué se está trabajando, o quién está a cargo de qué cosa. Por ejemplo, a veces alguien propone algo en una reunión o en el grupo de WhatsApp, y después no se sigue con la idea porque se pierde entre tantos mensajes o directamente se olvida. También hay estudiantes que quieren participar o ayudar, pero no saben cómo o ni a quién acercarse.
+En el Centro de Estudiantes de Derecho tenemos una gran dificultad para realizar encuestas de manera ordenada y accesible. Actualmente usamos herramientas externas como Google Forms u otros servicios gratuitos, lo que nos genera varios problemas: las encuestas quedan dispersas, es difícil administrarlas desde un solo lugar, y no tenemos un control total sobre los datos ni sobre la disponibilidad del servicio. Además, muchas veces resulta complicado para los estudiantes acceder a encuestas antiguas, ver resultados o participar de manera clara.
 
-Nos gustaría tener una página web del centro donde se pueda centralizar todo: que la gente vea quiénes somos, qué estamos haciendo, que pueda proponer ideas, y que esas ideas no se pierdan. También si alguien quiere sumarse a algún proyecto, que vea en qué puede colaborar. Y que sea más ordenado, más transparente, y más fácil para todos. Que esté todo en un solo lugar.
+Nos gustaria tener una página web en la que se puedan responder las encuestas y se puedan acceder a estas de forma clara y sencilla, además de tener la herramienta para administrarlas facilmente sin la necesidad de tener a alguien experto, para que sea manejable por cualquier integrante de la directiva.
 
-No sabemos nada de programación, así que necesitamos algo que nosotros podamos manejar fácil después, sin tener que estar pidiéndole ayuda a alguien todo el tiempo. Algo claro, simple, donde nosotros podamos actualizar la información si es necesario.
+No sabemos nada de programación, así que necesitamos algo que nosotros podamos manejar fácil después, sin tener que estar pidiéndole ayuda a alguien todo el tiempo. Algo claro, simple, donde nosotros podamos crear, administrar encuestas y manejar los datos de estas.
 
 ---
 
 ***Problema principal***
 
--Falta de organización y centralización de la información, comunicación y gestión de ideas dentro del centro de estudiantes de las facultades de la universidad, lo que genera:
-- Pérdida de información valiosa entre los múltiples canales (WhatsApp, E-mail o Formularios).
-- Falta de seguimiento de propuestas e ideas.
-- Desconocimiento sobre las personas que estan a cargo de los proyectos.
+-Falta de un sistema de encuestas para saber y manejar datos sobre las respuestas de los estudiantes y que no dependa a algun otro servicio lo que provoca:
 - Dificultad de nuevos estudiantes para participar.
-- Falta de transparencia en las actividades del centro.
-- Desconocimiento de los cargos que tienen los participantes del centro de estudiantes.
+- Falta de control sobre las encuestas.
+- Desconocimiento sobre el manejo de encuestas en otras plataformas.
+- Falta de versatilidad al crear y manejar las encuestas (datos).
+- Falta de una forma sencilla para acceder y contestar las encuestas.
 
 ---
 
@@ -85,27 +83,23 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 
 ***Datos básicos a almacenar***
 
--Estudiante
+-Usuario
+- ID
+- Nombre Completo
+- Correo Electronico institucional
+
+-Administrador
 - ID
 - Nombre completo
-- Correo electronico instuticional
+- Correo electronico institucional
 
--Profesor
+-Encuestas
 - ID
-- Nombre completo
-- Correo electronico instuticional
-- Ramo dictado
-
--Publicaciones
-- ID
-- Asunto
-- Informacion otorgada
+- Titulo
+- Descripcion
 - Fecha creacion
-- Comentarios
-- Encuesta Google Forms
-- URL
-- Fecha de subida
-
+- Opciones de voto
+- Votos de usuarios
 ---
 
 ***Requisitos Funcionales***
@@ -119,23 +113,23 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 
 -RF02 - Gestión de ideas
 
-- El sistema debe permitir crear nuevas ideas/propuestas
-- El sistema debe permitir comentar ideas
-- El sistema debe mostrar estados de las ideas (pendiente/aprobada/desaprobada)
-- El sistema debe mostrar sugerencias de ideas para publicaciones
+- El sistema debe permitir crear nuevas encuestas
+- El sistema debe permitir comentar encuestas
+- El sistema debe mostrar estados de las encuestas
+- El sistema debe mostrar sugerencias de encuestas para publicaciones
 
 ***Requisitos no Funcionales***
 
 -RNF01
 
-- Interfaz intuitiva para usuarios no tècnicos
-- Diseño flexible para distintas resoluciones
+- Interfaz intuitiva para usuarios
+- Resoluciones flexibles para distintos dispositivos 
 - Navegacion simple y clara
 
 -RNF02
 
-- Panel administrativo fácil de usar sin conocimientos tècnicos
-- Actualizacion de contenido sin necesidad de programacion
+- Panel administrativo más flexible
+- Actualizacion de contenido al instante
 
 -RNF03
 
@@ -144,5 +138,22 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - Integracion de un modo oscuro
 
 ---
+
+***MVP***
+
+El MVP de la página web que el cliente solicito tendra:
+
+- La página sera un "blog" en donde los estudiantes y profesores podrán ponder sus ideas.
+- La estetica de la página sera muy parecida a como es la página oficial de la Universidad.
+- Tendra un apartado o pestaña en donde se podra ver la información reciente que se publico.
+- Trendra un apartado o pestaña en donde se podrán ver los participantes del centro de estudiantes.
+- Como ya se mencionó, tendrá un aparado o pestaña en donde los Estudiantes o Profesores podrán poner sus ideas al estilo de los "blogs".
+- Pestaña con encuestas para que los estudiantes puedan tomar decisiones.
+
+Las ideas que se podrían implementar a futuro son:
+
+- Enviar mensajes de WhatsApp a los estudiantes avisando cambios, noticias, etc.
+- Interfaz personalizable (Colores).
+- Tener la capacidad de modificar el perfil (Foto de perfil).
   
 
