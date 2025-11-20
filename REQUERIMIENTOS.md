@@ -129,7 +129,7 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 -RNF02
 
 - Panel administrativo más flexible
-- Actualizacion de contenido sin necesidad de programacion
+- Actualizacion de contenido al instante
 
 -RNF03
 
