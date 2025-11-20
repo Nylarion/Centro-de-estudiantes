@@ -1,5 +1,10 @@
 # Diseño Funcional y Tecnico
 
+## Índice
+
+1. [Diseño Funcional](#1-diseño-funcional)
+2. [Diseño Tecnico](#2-diseño-tecnico)
+
 ## 1. Diseño Funcional
 
 ### 1.1 INTRODUCCION
