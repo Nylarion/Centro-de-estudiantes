@@ -136,7 +136,27 @@ Administrador:
 - Contraseña
 - Correo
 
-- Interfaces de usuario: WireFrame
+#### Interfaces de usuario:
+
+##### Registro:
+<img width="1459" height="860" alt="registro" src="https://github.com/user-attachments/assets/13a97274-8832-4997-b80d-70599b87feca" />
+
+##### Login:
+<img width="1457" height="854" alt="inicioSesion" src="https://github.com/user-attachments/assets/ebe3cfca-1b79-4ba0-aa53-591ec6209e07" />
+
+##### Página principal:
+<img width="1459" height="796" alt="pag_principal" src="https://github.com/user-attachments/assets/bf859162-26e3-484b-a51d-d2d78234a2ba" />
+
+##### Encuesta Seleccionada:
+<img width="1438" height="802" alt="encuesta_seleccionada" src="https://github.com/user-attachments/assets/46589dff-7337-45ad-ab42-e1f681743fe3" />
+
+##### Estadísticas:
+<img width="1452" height="774" alt="estadisticas" src="https://github.com/user-attachments/assets/cb5044e6-8b91-4bba-9fe0-1b6db699ec27" />
+
+##### Edición de perfil:
+
+<img width="1437" height="802" alt="edicion_perfil" src="https://github.com/user-attachments/assets/4bb6d4d9-dba5-4186-8dc1-8b1b6403a8bf" />
+
 
 ### 1.7 RESTRICCIONES Y SUPUESTOS
 
