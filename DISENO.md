@@ -209,8 +209,7 @@ El sistema permite a los administradores crear y publicar encuestas, mientras qu
 ### 2.2 Arquitectura del sistema
 
 #### Diagrama de arquitectura general:
-//imagen de diagrama de arquitectura general//
-
+<img width="741" height="833" alt="Diagrama_arquitectura_general drawio" src="https://github.com/user-attachments/assets/4ad310d8-3a37-4e70-8482-3fb0fce79f3f" />
 
 
 #### Descripción de componentes y módulos
@@ -243,8 +242,8 @@ El sistema permite a los administradores crear y publicar encuestas, mientras qu
 
 ### 2.3 Diseño de base de datos
 
-#### Modelo entidad-relación o UML
-//imagen de diagrama de entidadad-relacion//
+#### Modelo entidad-relación o UML:
+<img width="1019" height="1448" alt="er" src="https://github.com/user-attachments/assets/705e65f8-2b54-47ca-80f2-b062620bb148" />
 
 
 ##### Este modelo representa las entidades principal:
@@ -276,9 +275,9 @@ El sistema permite a los administradores crear y publicar encuestas, mientras qu
 - Administrador: gestion de encuestas
 
 
-#### Diagramas de clases
+#### Diagramas de clases:
+<img width="950" height="1880" alt="clases" src="https://github.com/user-attachments/assets/1e3262ce-c8ae-4cda-a342-bdc920d8b294" />
 
-//diagrama de clases//
 
 ##### Representa las clases:
 - Encuesta
@@ -286,9 +285,9 @@ El sistema permite a los administradores crear y publicar encuestas, mientras qu
 - Administrador
 Con sus atributos y métodos correspondientes.
 
-#### Diagramas de secuencia tecnico
+#### Diagramas de secuencia tecnico:
+<img width="1476" height="1881" alt="Diagrama_secuencia_tecnica_alt drawio" src="https://github.com/user-attachments/assets/5e1efbb9-da25-48a9-91a5-f5a0a8439442" />
 
-//diagrama de secuencia tecnico//
 
 ##### Flujo de votación:
 
@@ -304,9 +303,10 @@ Con sus atributos y métodos correspondientes.
 - Comunicación asincrónica via cola de mensajes
 
 
-### 2.5 Diseño de la interfaz de usuario
+### 2.5 Diseño de la interfaz de usuario:
 
-//insertar diagrama de navegacion UI//
+<img width="1018" height="743" alt="Diagrama_de_navegacion_UI_blanco" src="https://github.com/user-attachments/assets/c524d6fe-422b-483b-af95-8f5c1cf1fdd3" />
+
 
 ##### Descripción de navegación y elementos UI:
 - Inicio de sesión
