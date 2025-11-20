@@ -113,10 +113,10 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 
 -RF02 - Gestión de ideas
 
-- El sistema debe permitir crear nuevas ideas/propuestas
+- El sistema debe permitir crear nuevas encuestas
 - El sistema debe permitir comentar encuestas
 - El sistema debe mostrar estados de las encuestas
-- El sistema debe mostrar sugerencias de ideas para publicaciones
+- El sistema debe mostrar sugerencias de encuestas para publicaciones
 
 ***Requisitos no Funcionales***
 
