@@ -76,7 +76,7 @@ Los usuarios y roles que cada uno va a disponer o va a tener son:
 
 #### Diagrama de secuencia:
 
-<img width="1476" height="1881" alt="Diagrama_secuencia_tecnica_alt drawio" src="https://github.com/user-attachments/assets/7f99972c-5438-4188-a123-4278977269c3" />
+![S_funcional](https://github.com/user-attachments/assets/dd6e26d5-a78b-4d98-a53e-76dba45861d8)
 
 ### 1.5 REQUISITOS NO FUNCIONALES
 
