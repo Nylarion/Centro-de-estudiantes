@@ -113,23 +113,23 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 
 -RF02 - Gestión de ideas
 
-- El sistema debe permitir crear nuevas ideas/propuestas
-- El sistema debe permitir comentar ideas
-- El sistema debe mostrar estados de las ideas (pendiente/aprobada/desaprobada)
-- El sistema debe mostrar sugerencias de ideas para publicaciones
+- El sistema debe permitir crear nuevas encuestas
+- El sistema debe permitir comentar encuestas
+- El sistema debe mostrar estados de las encuestas
+- El sistema debe mostrar sugerencias de encuestas para publicaciones
 
 ***Requisitos no Funcionales***
 
 -RNF01
 
-- Interfaz intuitiva para usuarios no tècnicos
-- Diseño flexible para distintas resoluciones
+- Interfaz intuitiva para usuarios
+- Resoluciones flexibles para distintos dispositivos 
 - Navegacion simple y clara
 
 -RNF02
 
-- Panel administrativo fácil de usar sin conocimientos tècnicos
-- Actualizacion de contenido sin necesidad de programacion
+- Panel administrativo más flexible
+- Actualizacion de contenido al instante
 
 -RNF03
 
