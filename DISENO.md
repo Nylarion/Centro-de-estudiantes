@@ -68,15 +68,15 @@ Los usuarios y roles que cada uno va a disponer o va a tener son:
 ### 1.4 DIAGRAMAS FUNCIONALES
 
 #### Diagrama de casos de uso:
-![alt text](usecasesdiagram.png)
+<img width="621" height="798" alt="usecasesdiagram" src="https://github.com/user-attachments/assets/9cd48ab1-3153-42fe-8b94-ef1ea81849ad" />
 
 #### Diagrama de flujo de procesos:
 
-![alt text](processflowdiagram.png)
+<img width="807" height="1906" alt="processflowdiagram" src="https://github.com/user-attachments/assets/28a04b44-c33f-464b-ae6e-2eefadc22a4c" />
 
 #### Diagrama de secuencia:
 
-![alt text](Diagrama_secuencia_tecnica_alt.drawio.png)
+<img width="1476" height="1881" alt="Diagrama_secuencia_tecnica_alt drawio" src="https://github.com/user-attachments/assets/7f99972c-5438-4188-a123-4278977269c3" />
 
 ### 1.5 REQUISITOS NO FUNCIONALES
 
