@@ -185,3 +185,177 @@ Las suposiciones que realizamos son:
 ##### Uso de Redis:
 
 - Las consultas siguientes a la primera deben de tener un tiempo de respuesta menor a 150 ms.
+
+
+## 2. Diseño Técnico
+
+
+### 2.1 Introducción
+
+#### Propósito
+Este documento describe el diseño técnico del sistema de encuestas orientado a estudiantes y administradores. Su objetivo es detallar la arquitectura, componentes, base de datos, interfaz de usuario y consideraciones técnicas para su implementación y mantenimiento.
+
+#### Alcance
+El sistema permite a los administradores crear y publicar encuestas, mientras que los estudiantes pueden responderlas. Incluye funcionalidades de autenticación, visualización de resultados y gestión de usuarios.
+
+#### Referencias:
+- Diagramas UML y ERD del sistema
+
+- Arquitectura basada en microservicios
+
+#### Tecnologías: Node.js, MongoDB, Redis, Docker, etc.
+
+
+### 2.2 Arquitectura del sistema
+
+#### Diagrama de arquitectura general:
+//imagen de diagrama de arquitectura general//
+
+
+
+#### Descripción de componentes y módulos
+
+- Frontend Web: Interfaz gráfica para login, dashboard, encuestas, perfil y resultados
+
+- API Gateway: Valida token y enruta solicitudes hacia los microservicios
+
+- Microservicio de encuestas (Encuestas MS): CRUD de encuestas, validacion de votos, publicacion de eventos
+
+- Microservicio de Usuarios (Usuarios MS): Registro, autenticacion, perfiles y roles (estudiante/administrador)
+
+- Microservicio de Estadísticas (StatsMS): Procesa eventos de votos y genera métricas
+
+- Cache(Redis): Almacena encuestas activas y resultados parciales
+
+- Message Broker (Queue): Maneja eventos como VOTO_REGISTRADO
+
+- MongoDB: Base de datos principal para usuarios, encuestas, votos y metricas
+
+
+#### Tecnologia y plataformas utilizadas
+- Frontend Web
+- Backend: Node.js con Express
+- Base de datos: MongoDB
+- Cache: Redis
+- Mensajes
+- Infraestructura: Docker
+
+
+### 2.3 Diseño de base de datos
+
+#### Modelo entidad-relación o UML
+//imagen de diagrama de entidadad-relacion//
+
+
+##### Este modelo representa las entidades principal:
+- Estudiante
+- Administrador
+- Encuesta
+
+##### Con relaciones:
+- Estudiante responde encuesta
+- Administrador administra encuesta
+
+##### Esquema de tablas y relaciones
+- Estudiante: _id, orderDate, status
+- Administrador: _id, name, email
+- Encuesta: _id, estudiante_id, titulo, descripcion, fecha, opciones_voto, voto_usuario
+
+##### Reglas de integridad y normalización
+- Claves primarias y foráneas correctamente definidas
+- Eliminacion de redunancias
+- Cumplimiento de la tercera forma normal
+
+
+### 2.4 Diseño de componentes
+
+#### Descripción detallada de cada módulo/componente
+
+- Encuesta: creacion, edición, publicacion, votación
+- Estudiante: autenticacion,visualizacion, respuesta
+- Administrador: gestion de encuestas
+
+
+#### Diagramas de clases
+
+//diagrama de clases//
+
+##### Representa las clases:
+- Encuesta
+- Estudiante
+- Administrador
+Con sus atributos y métodos correspondientes.
+
+#### Diagramas de secuencia tecnico
+
+//diagrama de secuencia tecnico//
+
+##### Flujo de votación:
+
+- Validacion de token
+- Verificacion de voto previo
+- Registro del voto
+- Publicacion en la cola de mensajes
+
+##### Interfaces internas y externas
+
+- REST API entre microservicios
+- Interfaces web para usuarios
+- Comunicación asincrónica via cola de mensajes
+
+
+### 2.5 Diseño de la interfaz de usuario
+
+//insertar diagrama de navegacion UI//
+
+##### Descripción de navegación y elementos UI:
+- Inicio de sesión
+- Dash board con menú lateral
+- Perfil "editable"
+- Pantalla de encuestas
+- Resultados visuales
+
+### 2.6 Consideraciones de seguridad
+##### Autenticación y autorización:
+- JWT para autenticación
+- Roles diferenciados: estudiante y administrador
+
+##### Encriptación y protección de datos:
+- HTTPS para comunicacion segura
+- Encriptacion de contraseñas con bcryptjs
+- Validacion de entrada para prevenir inyecciones
+
+### 2.7 Plan de pruebas técnicas
+
+##### Tipos de pruebas
+- Unitarias: Funciones individuelas
+- Integracion: Interaccion entre servicios
+- Sistemas: pruebas end-to-end
+
+##### Herramientas y entornos de prueba
+- Jest
+- Insomnia
+
+### 2.8 Requisitos de hardware y software
+
+##### Entorno de ejecucion
+- Este sistema esta diseñado para ejecutarse localmente en su primera etapa lo que implica no requerir nube ni servidores externos de momento.
+
+- Sistema operativo Linux
+
+- Requisitos de software
+    Node.js
+    MongoDB
+    Redis
+    Navegador moderno para acceder al frontend
+
+##### Consideraciones adicionales
+- No se requiere conexiones a internet para el funcionamiento basico
+- El despliegue se realiza mediante scripts locales o Docker Compose
+
+
+### 2.9 Mantenimiento y escalabilidad
+
+Estrategias para mantenimiento
+- Actualizaciones por microservicio
+
