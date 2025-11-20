@@ -86,23 +86,22 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 ***Datos básicos a almacenar***
 
 -Usuario
+- ID
+- Nombre Completo
+- Correo Electronico institucional
 
-ID
-Nombre completo
-Correo electronico institucional
 -Administrador
+- ID
+- Nombre completo
+- Correo electronico institucional
 
-ID
-Nombre completo
-Correo electronico institucional
 -Encuestas
-
-ID
-Titulo
-Descripcion
-Fecha creacion
-Opciones de voto
-Votos de usuarios
+- ID
+- Titulo
+- Descripcion
+- Fecha creacion
+- Opciones de voto
+- Votos de usuarios
 ---
 
 ***Requisitos Funcionales***
