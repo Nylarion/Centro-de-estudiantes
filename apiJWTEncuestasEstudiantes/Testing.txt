@@ -1,0 +1,14 @@
+Token usuario 1: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjkyOTE0Y2I1NmI1MWJjMGUzODUyYTExIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTc2NDMwMDE0NywiZXhwIjoxNzY0MzAzNzQ3fQ.JyWVKPFeNnVgWBoiGWz4vte7PYdV8ygPodfHtEG_2rI"
+
+Token usuario 2: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjkyOTE2NDY1NmI1MWJjMGUzODUyYTFhIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTc2NDMwMDM5NSwiZXhwIjoxNzY0MzAzOTk1fQ.7SS_1P39EnKaR7uOSh3XMqADPoRq_mMediIQeqAlRNE"
+
+
+Usuario no admin: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjkyOTE3YTA1NmI1MWJjMGUzODUyYTIzIiwicm9sZSI6InN0dWRlbnQifSwiaWF0IjoxNzY0MzAwNzEwLCJleHAiOjE3NjQzMDQzMTB9.AGquB5n_uzFE6q9G_doL_TnF2ongkARVo8pQt5eW-xw"
+
+
+
+{
+	"title": " ",
+	"description": 123,
+	"options": ["Si", "nose", "caca", "python", "pacman", "XD"]
+}

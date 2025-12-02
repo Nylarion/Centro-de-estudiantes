@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 // Importar rutas
 const authRoutes = require('./routes/auth');
-const itemRoutes = require('./routes/items');
+const surveyRoutes = require('./routes/surveys');
 
 // Importar middleware
 const authMiddleware = require('./middleware/authMiddleware');
@@ -15,13 +15,25 @@ const app = express();
 
 // Middleware para parsear JSON
 app.use(express.json());
+
+// Middleware para que al momento de ingresar un caracter no valido la API e Insomnia/Postman no falle.
+//----------------------------------------------------------------------------------------------------------//
+app.use((err, req, res, next) => {
+
+  if (err instanceof SyntaxError && err.status === 400 && 'body' in err){
+
+    return res.status(400).json({
+      message:"El formato del JSON es invalido. Revisa las comillas, llaves y la sintaxis ten general"});
+
+  }
+  next();
+});
+//----------------------------------------------------------------------------------------------------------//
+
 app.use(express.urlencoded({ extended: true }));
 
 // Conectar a MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(process.env.MONGODB_URI) 
   .then(() => console.log('✅ MongoDB connected successfully'))
   .catch(err => {
     console.error('❌ MongoDB connection error:', err.message);
@@ -32,7 +44,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 app.use('/api/auth', authRoutes);
 
 // Rutas protegidas (requieren autenticación JWT)
-app.use('/api/items', authMiddleware, itemRoutes);
+app.use('/api/surveys', surveyRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {

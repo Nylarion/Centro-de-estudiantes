@@ -1,0 +1,2 @@
+#Evita subir información sensible al Github
+.env
