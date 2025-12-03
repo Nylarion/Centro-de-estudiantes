@@ -7,14 +7,14 @@ const Survey = require('../models/Survey');
 const redisClient = require('../config/redis');
 
 const CACHE_KEY = 'surveys_list';
-const CACHE_TIME = 3600; // 1 hora en segundos
+const CACHE_TIME = 1800; // 30 minutos en segundos
 
 // 1. OBTENER ENCUESTAS (Público/Estudiantes) - CON REDIS
 router.get('/', auth, async (req, res) => {
   try {
     // Paso A: Consultar Redis
     const cachedData = await redisClient.get(CACHE_KEY);
-    
+
     if (cachedData) {
       console.log('⚡ Hit de Caché (Redis)');
       return res.json(JSON.parse(cachedData));
@@ -27,7 +27,7 @@ router.get('/', auth, async (req, res) => {
     // Paso C: Guardar en Redis para la próxima
     // En Redis v4/v5 set acepta opciones como tercer argumento
     await redisClient.set(CACHE_KEY, JSON.stringify(surveys), {
-      EX: CACHE_TIME 
+      EX: CACHE_TIME
     });
 
     res.json(surveys);
@@ -44,60 +44,60 @@ router.post('/', [auth, isAdmin], async (req, res) => {
 
     //VALIDACIONES
     //------------------------------------------------------------------------------------------------------------//
-    if (!title || title.trim().length < 3){
+    if (!title || title.trim().length < 15) {
 
-      return res.status(400).json({message: "El titulo es obligatorio y debe tener al menos de 3 caracteres"});
-
-    }
-
-    if (title.trim().length > 150){
-
-      return res.status(400).json({message: "El titulo no puede tener mas de 150 caracteres"});
+      return res.status(400).json({ message: "El titulo es obligatorio y debe tener al menos de 15 caracteres" });
 
     }
 
-    if (!description || description.trim().length < 5){
+    if (title.trim().length > 150) {
 
-      return res.status(400).json({message: "La descripcion es obligatoria y debe tener al menos de 5 caracteres"});
-
-    }
-
-    if (description.trim().length > 300){
-
-      return res.status(400).json({message: "La descripcion no puede tener mas de 300 caracteres"});
-
-    }
-    
-    if (!Array.isArray(options) || options.length < 2){
-
-      return res.status(400).json({message: "La encuesta debe tener al menos 2 opciones para votar."});
+      return res.status(400).json({ message: "El titulo no puede tener mas de 150 caracteres" });
 
     }
 
-    if (options.length > 5){
+    if (!description || description.trim().length < 5) {
 
-      return res.status(400).json({message: "La encuesta no puede tener mas de 5 opciones"});
+      return res.status(400).json({ message: "La descripcion es obligatoria y debe tener al menos de 5 caracteres" });
 
     }
 
-    for (let opt of options){
+    if (description.trim().length > 300) {
 
-      if (typeof opt !== "string" || opt.trim() === ""){
+      return res.status(400).json({ message: "La descripcion no puede tener mas de 300 caracteres" });
 
-        return res.status(400).json({message:`La opción "${opt}" no es válida.`});
+    }
+
+    if (!Array.isArray(options) || options.length < 2) {
+
+      return res.status(400).json({ message: "La encuesta debe tener al menos 2 opciones para votar." });
+
+    }
+
+    if (options.length > 5) {
+
+      return res.status(400).json({ message: "La encuesta no puede tener mas de 5 opciones" });
+
+    }
+
+    for (let opt of options) {
+
+      if (typeof opt !== "string" || opt.trim() === "") {
+
+        return res.status(400).json({ message: `La opción "${opt}" no es válida.` });
 
       }
     }
 
-    if (typeof active !== "boolean"){
+    if (typeof active !== "boolean") {
 
-        return res.status(400).json({message: "Ingrese un estado valido de la encuesta, puede ser 'true' o 'false'"});
+      return res.status(400).json({ message: "Ingrese un estado valido de la encuesta, puede ser 'true' o 'false'" });
 
     }
-    
+
     let isActive = active === undefined ? true : Boolean(active);
     //------------------------------------------------------------------------------------------------------------//
-    
+
     // Convertir array de strings ["Opción A", "Opción B"] a objetos
     const formattedOptions = options.map(opt => ({ text: opt }));
 
@@ -184,24 +184,28 @@ router.post('/:id/vote', auth, async (req, res) => {
   try {
     const { optionId } = req.body;
     const survey = await Survey.findById(req.params.id);
-
     if (!survey) return res.status(404).json({ message: 'Encuesta no encontrada' });
-
-    // Buscar la opción dentro del array
+    // 1. Verificar que sea estudiante
+    if (req.user.role !== 'student') {
+      return res.status(403).json({ message: 'Solo los estudiantes pueden votar' });
+    }
+    // 2. [IMPORTANTE] Verificar si ya votó
+    if (survey.votedBy.includes(req.user.id)) {
+      return res.status(400).json({ message: 'Ya has votado en esta encuesta' });
+    }
+    // 3. Buscar la opción y sumar voto
     const option = survey.options.id(optionId);
     if (!option) return res.status(400).json({ message: 'Opción no válida' });
 
-    // Incrementar voto
     option.votes++;
+    // 4. Registrar que este usuario ya votó
+    survey.votedBy.push(req.user.id);
     await survey.save();
-
-    // Invalidar caché para que se actualicen los resultados
-    await redisClient.del(CACHE_KEY);
-
+    // 5. Invalidar caché
+    await redisClient.del('surveys_list');
     res.json({ message: 'Voto registrado', survey });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Error al votar' });
+
   }
 });
 
