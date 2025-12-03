@@ -10,7 +10,11 @@ const SurveySchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: String,
   createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  options: [OptionSchema], 
+  options: [OptionSchema],
+
+  // Array para guardar los IDs de usuarios que ya votaron
+  votedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+
   active: { type: Boolean, default: true }
 }, { timestamps: true });
 
