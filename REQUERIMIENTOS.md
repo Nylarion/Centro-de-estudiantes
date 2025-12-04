@@ -81,14 +81,12 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 - El sistema debe permitir registro con validación de email institucional
 - El sistema debe implementar login/logout seguro
 - El sistema debe asignar y verificar roles de usuario
-- El sistema debe permitir comentar solo al logear con email institucional
+- El sistema debe permitir votar solo al logear con email institucional
 
 -RF02 - Gestión de ideas
 
 - El sistema debe permitir crear nuevas encuestas
-- El sistema debe permitir comentar encuestas
 - El sistema debe mostrar estados de las encuestas
-- El sistema debe mostrar sugerencias de encuestas para publicaciones
 
 ***Requisitos no Funcionales***
 
@@ -115,16 +113,15 @@ No sabemos nada de programación, así que necesitamos algo que nosotros podamos
 
 El MVP de la página web que el cliente solicito tendra:
 
-- La página sera un "blog" en donde los estudiantes y profesores podrán ponder sus ideas.
+- La página sera un sitio de encuestas en donde los estudiantes y profesores podrán votar para tomar decisiones entre todos.
 - La estetica de la página sera muy parecida a como es la página oficial de la Universidad.
-- Tendra un apartado o pestaña en donde se podra ver la información reciente que se publico.
+- Tendra un apartado o pestaña en donde se podra ver las encuestas publicadas.
 - Trendra un apartado o pestaña en donde se podrán ver los participantes del centro de estudiantes.
-- Como ya se mencionó, tendrá un aparado o pestaña en donde los Estudiantes o Profesores podrán poner sus ideas al estilo de los "blogs".
-- Pestaña con encuestas para que los estudiantes puedan tomar decisiones.
+- Como ya se mencionó, tendrá un aparado o pestaña en donde los Estudiantes podrán ver las encuestas cerradas, por completar o realizadas.
 
 Las ideas que se podrían implementar a futuro son:
 
-- Enviar mensajes de WhatsApp a los estudiantes avisando cambios, noticias, etc.
+- Enviar mensajes de WhatsApp a los estudiantes avisando que hay nuevas encuestas por responder.
 - Interfaz personalizable (Colores).
 - Tener la capacidad de modificar el perfil (Foto de perfil).
   
