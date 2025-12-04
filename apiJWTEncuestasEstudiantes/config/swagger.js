@@ -9,7 +9,7 @@ const options = {
             description: 'API para la gestión de encuestas y votaciones del Centro de Estudiantes',
             contact: {
                 name: 'Soporte',
-                email: 'soporte@alu.uct.cl'
+                email: 'bpalma2025@alu.uct.cl'
             }
         },
         servers: [

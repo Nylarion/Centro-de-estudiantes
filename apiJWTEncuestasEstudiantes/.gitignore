@@ -1,2 +1,16 @@
-#Evita subir información sensible al Github
+# Evita subir información sensible al Github
 .env
+
+# Dependencias
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker
+.dockerignore
+
+# OS
+.DS_Store
