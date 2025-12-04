@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # Servicio de la API (Tu aplicación Node.js)
+
   api:
     build: .
     ports:
@@ -23,7 +23,7 @@ services:
   mongo:
     image: mongo:6.0
     ports:
-      - "27018:27017" # Cambiado a 27018 para evitar conflictos con tu Mongo local
+      - "27018:27017"
     volumes:
       - mongo-data:/data/db
     networks:
@@ -33,7 +33,7 @@ services:
   redis:
     image: redis:alpine
     ports:
-      - "6380:6379" # Cambiado a 6380 para evitar conflictos con tu Redis local
+      - "6380:6379"
     networks:
       - app-network
 
