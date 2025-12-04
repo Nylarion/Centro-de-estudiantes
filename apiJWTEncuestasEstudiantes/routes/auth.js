@@ -11,6 +11,41 @@ const isValidUCTEmail = (email) => {
   return regex.test(email);
 };
 
+/**
+ * @swagger
+ * tags:
+ *   name: Auth
+ *   description: Autenticación de usuarios
+ */
+
+/**
+ * @swagger
+ * /api/auth/register:
+ *   post:
+ *     summary: Registrar un nuevo estudiante
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 description: Correo institucional (@alu.uct.cl)
+ *               password:
+ *                 type: string
+ *                 description: Contraseña (min 6 caracteres)
+ *     responses:
+ *       201:
+ *         description: Usuario registrado exitosamente
+ *       400:
+ *         description: Datos inválidos o usuario ya existe
+ */
 // @route   POST /api/auth/register
 router.post('/register', async (req, res) => {
   // Recibimos email
@@ -22,8 +57,8 @@ router.post('/register', async (req, res) => {
 
   // --- VALIDACIÓN DE DOMINIO ---
   if (!isValidUCTEmail(email)) {
-    return res.status(400).json({ 
-      message: 'Registro denegado. Solo se permiten correos institucionales (@alu.uct.cl)' 
+    return res.status(400).json({
+      message: 'Registro denegado. Solo se permiten correos institucionales (@alu.uct.cl)'
     });
   }
 
@@ -47,6 +82,32 @@ router.post('/register', async (req, res) => {
   }
 });
 
+/**
+ * @swagger
+ * /api/auth/login:
+ *   post:
+ *     summary: Iniciar sesión
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
+ *             properties:
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Login exitoso, devuelve token JWT
+ *       400:
+ *         description: Credenciales inválidas
+ */
 // @route   POST /api/auth/login
 router.post('/login', async (req, res) => {
   // Login con email
@@ -80,7 +141,7 @@ router.post('/login', async (req, res) => {
       { expiresIn: '1h' },
       (err, token) => {
         if (err) throw err;
-        res.json({ 
+        res.json({
           token,
           user: {
             id: user.id,

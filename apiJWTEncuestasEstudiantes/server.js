@@ -20,10 +20,11 @@ app.use(express.json());
 //----------------------------------------------------------------------------------------------------------//
 app.use((err, req, res, next) => {
 
-  if (err instanceof SyntaxError && err.status === 400 && 'body' in err){
+  if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
 
     return res.status(400).json({
-      message:"El formato del JSON es invalido. Revisa las comillas, llaves y la sintaxis ten general"});
+      message: "El formato del JSON es invalido. Revisa las comillas, llaves y la sintaxis en general"
+    });
 
   }
   next();
@@ -33,12 +34,17 @@ app.use((err, req, res, next) => {
 app.use(express.urlencoded({ extended: true }));
 
 // Conectar a MongoDB
-mongoose.connect(process.env.MONGODB_URI) 
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('✅ MongoDB connected successfully'))
   .catch(err => {
     console.error('❌ MongoDB connection error:', err.message);
     process.exit(1);
   });
+
+// Swagger
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpecs = require('./config/swagger');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 // Rutas públicas (sin autenticación)
 app.use('/api/auth', authRoutes);
@@ -59,7 +65,10 @@ app.use((req, res) => {
 // Puerto
 const PORT = process.env.PORT || 3000;
 
+
+
 // Iniciar servidor
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`📄 Swagger Docs available at http://localhost:${PORT}/api-docs`);
 });
