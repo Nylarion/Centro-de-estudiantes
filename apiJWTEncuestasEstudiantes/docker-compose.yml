@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # Servicio de la API (Tu aplicación Node.js)
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      # Usamos el nombre del servicio 'mongo' como host
+      - MONGODB_URI=mongodb://mongo:27017/centro-de-estudiantes
+      # Usamos el nombre del servicio 'redis' como host
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=tu_secreto_super_seguro_para_docker
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - app-network
+
+  # Servicio de Base de Datos (MongoDB)
+  mongo:
+    image: mongo:6.0
+    ports:
+      - "27018:27017" # Cambiado a 27018 para evitar conflictos con tu Mongo local
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
+  # Servicio de Caché (Redis)
+  redis:
+    image: redis:alpine
+    ports:
+      - "6380:6379" # Cambiado a 6380 para evitar conflictos con tu Redis local
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
