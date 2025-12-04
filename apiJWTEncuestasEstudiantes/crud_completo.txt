@@ -1,0 +1,105 @@
+================================================================================
+GUÍA CRUD COMPLETO - API ENCUESTAS
+Host: http://localhost:3000
+================================================================================
+
+1. AUTENTICACIÓN
+--------------------------------------------------------------------------------
+
+[POST] Registrar Estudiante
+URL: http://localhost:3000/api/auth/register
+Body (JSON):
+{
+  "email": "estudiante.test@alu.uct.cl",
+  "password": "password123"
+}
+
+[POST] Registrar Admin (Nota: El rol 'admin' se debe asignar manualmente en BD)
+URL: http://localhost:3000/api/auth/register
+Body (JSON):
+{
+  "email": "admin.test@alu.uct.cl",
+  "password": "password123"
+}
+
+[POST] Iniciar Sesión (Login)
+URL: http://localhost:3000/api/auth/login
+Body (JSON):
+{
+  "email": "estudiante.test@alu.uct.cl",
+  "password": "password123"
+}
+Respuesta: Copia el "token" para usarlo en los Headers (Authorization: Bearer <TOKEN>)
+
+================================================================================
+2. GESTIÓN DE ENCUESTAS (Requiere Token Admin)
+================================================================================
+
+[POST] Crear Encuesta
+URL: http://localhost:3000/api/surveys
+Body (JSON):
+{
+  "title": "Encuesta de Satisfacción 2025",
+  "description": "Encuesta para evaluar los servicios del campus.",
+  "questions": [
+    {
+      "text": "¿Cómo calificas la cafetería?",
+      "type": "single",
+      "options": [
+        { "text": "Buena" },
+        { "text": "Regular" },
+        { "text": "Mala" }
+      ]
+    },
+    {
+      "text": "¿Qué deportes te gustaría practicar?",
+      "type": "multiple",
+      "options": [
+        { "text": "Fútbol" },
+        { "text": "Básquetbol" },
+        { "text": "Vóleibol" },
+        { "text": "Tenis" }
+      ]
+    }
+  ]
+}
+
+[GET] Listar Encuestas (Público/Estudiantes)
+URL: http://localhost:3000/api/surveys
+Body: No aplica
+
+[PUT] Actualizar Encuesta
+URL: http://localhost:3000/api/surveys/<ID_DE_LA_ENCUESTA>
+Body (JSON):
+{
+  "title": "Encuesta de Satisfacción 2025 (Corregida)",
+  "active": true
+}
+
+[DELETE] Eliminar Encuesta
+URL: http://localhost:3000/api/surveys/<ID_DE_LA_ENCUESTA>
+Body: No aplica
+
+================================================================================
+3. RESPONDER Y RESULTADOS (Requiere Token Estudiante/Admin)
+================================================================================
+
+[POST] Responder Encuesta (Estudiante)
+URL: http://localhost:3000/api/surveys/<ID_DE_LA_ENCUESTA>/answer
+Body (JSON):
+{
+  "responses": [
+    {
+      "questionId": "<ID_PREGUNTA_1>",
+      "selectedOptions": ["<ID_OPCION_SELECCIONADA>"]
+    },
+    {
+      "questionId": "<ID_PREGUNTA_2>",
+      "selectedOptions": ["<ID_OPCION_1>", "<ID_OPCION_2>"]
+    }
+  ]
+}
+
+[GET] Ver Resultados (Solo Admin)
+URL: http://localhost:3000/api/surveys/<ID_DE_LA_ENCUESTA>/results
+Body: No aplica
